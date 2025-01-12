@@ -1,0 +1,103 @@
+﻿/* Dark Styling of the Editor */
+div.jsoneditor,
+div.jsoneditor-menu {
+    border-color: #2c3e50; /* Dark Blue Gray */
+}
+
+div.jsoneditor-menu {
+    background-color: #2c3e50; /* Dark Blue Gray */
+}
+
+div.jsoneditor-tree,
+div.jsoneditor textarea.jsoneditor-text {
+    background-color: #34495e; /* Slightly Lighter Dark Blue Gray */
+    color: #ecf0f1; /* Light Gray */
+}
+
+div.jsoneditor-field,
+div.jsoneditor-value {
+    color: #ecf0f1; /* Light Gray */
+}
+
+table.jsoneditor-search div.jsoneditor-frame {
+    background: #1e2a38; /* Very Dark Blue Gray */
+}
+
+tr.jsoneditor-highlight,
+tr.jsoneditor-selected {
+    background-color: #1e2a38; /* Very Dark Blue Gray */
+}
+
+div.jsoneditor-field[contenteditable=true]:focus,
+div.jsoneditor-field[contenteditable=true]:hover,
+div.jsoneditor-value[contenteditable=true]:focus,
+div.jsoneditor-value[contenteditable=true]:hover,
+div.jsoneditor-field.jsoneditor-highlight,
+div.jsoneditor-value.jsoneditor-highlight {
+    background-color: #2c3e50; /* Dark Blue Gray */
+    border-color: #2c3e50; /* Dark Blue Gray */
+}
+
+div.jsoneditor-field.highlight-active,
+div.jsoneditor-field.highlight-active:focus,
+div.jsoneditor-field.highlight-active:hover,
+div.jsoneditor-value.highlight-active,
+div.jsoneditor-value.highlight-active:focus,
+div.jsoneditor-value.highlight-active:hover {
+    background-color: #34495e; /* Slightly Lighter Dark Blue Gray */
+    border-color: #34495e; /* Slightly Lighter Dark Blue Gray */
+}
+
+/* Açılır kapanır butonların arka plan rengini beyaz yap */
+div.jsoneditor-tree button {
+    background-color: #ffffff; /* Arka plan rengi beyaz */
+    color: #000000; /* Simge rengi siyah (ok simgeleri için) */
+    border: 1px solid #cccccc; /* Kenar çizgisi (opsiyonel) */
+    outline: none; /* Varsayılan odak kenarlığını kaldır */
+}
+
+    /* Açılır kapanır butonlara odaklanıldığında stil */
+    div.jsoneditor-tree button:focus {
+        background-color: #ffffff; /* Arka plan rengi beyaz */
+        color: #000000; /* Simge rengi siyah */
+        border: 1px solid #cccccc; /* Kenar çizgisi (opsiyonel) */
+    }
+
+    /* Açılır kapanır butonların hover durumunda stili */
+    div.jsoneditor-tree button:hover {
+        background-color: #f0f0f0; /* Hover durumunda arka plan rengini biraz gri yapar */
+    }
+
+/* Coloring of JSON in Tree Mode */
+div.jsoneditor-readonly {
+    color: #95a5a6; /* Light Gray */
+}
+
+div.jsoneditor td.jsoneditor-separator {
+    color: #95a5a6; /* Light Gray */
+}
+
+div.jsoneditor-value.jsoneditor-string {
+    color: #1abc9c; /* Turquoise */
+}
+
+div.jsoneditor-value.jsoneditor-object,
+div.jsoneditor-value.jsoneditor-array {
+    color: #bdc3c7; /* Light Gray */
+}
+
+div.jsoneditor-value.jsoneditor-number {
+    color: #e74c3c; /* Red */
+}
+
+div.jsoneditor-value.jsoneditor-boolean {
+    color: #f39c12; /* Orange */
+}
+
+div.jsoneditor-value.jsoneditor-null {
+    color: #3498db; /* Blue */
+}
+
+div.jsoneditor-value.jsoneditor-invalid {
+    color: #ffffff; /* White */
+}

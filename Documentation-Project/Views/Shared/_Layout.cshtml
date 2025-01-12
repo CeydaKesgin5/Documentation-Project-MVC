@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="tr-TR">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+    <header>
+        <ul id="menuList">
+            <li>
+                    <div class="search-main">
+                    <input type="text" id="searchTags" class="tbox-search" placeholder="Arama yapın..." />
+                        <button type="submit" id="searchButton" class="btn-search">
+                            <i class="fa-solid fa-magnifying-glass"></i> <!-- Arama İkonu -->
+                        </button>
+                    </div>
+            </li>
+
+            <li>
+                <a href="@Url.Action("Index", "Home")" title="Home" class="active">Home</a></li>
+            <li>
+                <a href="@Url.Action("Request", "Request")" class="menu-toggle" title="Request">Request</a>
+
+                <ul>
+                    <li><a href="@Url.Action("Privacy", "Home")" title="Privacy">Firma Ekle</a></li>
+                    <li><a href=" @Url.Action("Request", "Request")">Firma Güncelle</a></li>
+                    <li><a href="#" >Firma Listele</a></li>
+
+                </ul>
+            </li>
+
+            <li><a href="@Url.Action("Privacy", "Home")" title="Privacy">Privacy</a></li>
+
+        </ul>
+    </header>
+    <main>
+        @RenderBody()
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        jQuery.expr[':'].contains = function (a, i, m) {
+            return jQuery(a).text().toUpperCase()
+                .indexOf(m[3].toUpperCase()) >= 0;
+        };
+
+        $(document).ready(function () {
+
+            // keyup ile inputa herhangi bir değer girilince fonksiyonu tetikliyoruz
+            $("#searchTags").keyup(function () {
+
+                // inputa yazılan değeri alıyoruz
+                var value = $("#searchTags").val();
+
+                // eğer input içinde değer yoksa yani boşsa tüm menüyü çıkartıyoruz
+                if (value.length == 0) {
+
+                    $("#menuList li").show();
+
+                    // arama yapılmışsa ilk olarak tüm menüyü gizliyoruz ve girilen değer ile eşleşen kısmı çıkarıyoruz
+                } else {
+
+                    $("#menuList li").hide();
+                    $("#menuList li:contains(" + value + ")").show();
+
+                }
+
+            });
+
+        });
+    </script>
+
+
+  
+    <script>
+        $(document).ready(function () {
+            // Menü başlıklarına tıklama işlevselliği ekleme
+            $('.menu-toggle').click(function (e) {
+                e.preventDefault(); // Linkin varsayılan davranışını engelle
+
+                // Tıklanan menü öğesine 'active' sınıfını ekle veya çıkar
+                $(this).parent('li').toggleClass('active');
+
+                // Diğer tüm menü öğelerinden 'active' sınıfını kaldır
+                $(this).parent('li').siblings().removeClass('active');
+            });
+        });
+    </script>
+
+
+
+
+</body>
+</html>
+
+
+
